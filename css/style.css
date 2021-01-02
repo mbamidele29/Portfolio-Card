@@ -355,7 +355,6 @@ span.code_css {
 }
 
 .biz-card.back {
-    background-color: blue;
     transform: rotateY(180deg);
 }
 
