@@ -43,28 +43,46 @@ a {
     background-color: white;
 }
 
-.biz-card {
-    transform-style: preserve-3d;
+.container {
     width: 70%;
     height: 80%;
+    perspective: 20rem;
+}
+
+.biz-card {
+    transition: transform 1s ease-in;
+    width: 100%;
+    height: 100%;
     position: relative;
-    transform: scale(1);
-    background-color: rgba(0, 0, 0, .57);
-    backdrop-filter: blur(.15rem);
+    transform-style: preserve-3d;
     /* animation: anim_biz 3s linear 1; */
     /* transition: all 3s ease-in; */
 }
 
-.biz-card.main {
-    transition: transform .7s ease-in;
+.biz-card.rotate  {
+    transform: rotateY(180deg);
+}
+
+.biz-child {
+    backface-visibility: hidden;
+    background-color: rgba(0, 0, 0, .57);
+    backdrop-filter: blur(.15rem);
     overflow: hidden;
-    position: relative;
-    display: grid;
-    /* width: 100%;
-    height: 100%; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
     background: none;
+    display: grid;
+    backface-visibility: hidden;
     grid-template-columns: repeat(2, 1fr);
-    transform-style: preserve-3d;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.hidden {
+    display: none;
 }
 
 i {
@@ -143,10 +161,10 @@ span.code_css {
     animation-delay: 2.575s;
 }
 
-.biz-card.main::before {
+.main::before {
     content: '';
     position: absolute;
-    top: -15%;
+    top: -30%;
     right: -10%;
     background-color: rgb(228, 47, 56);
     width: 60%;
@@ -154,7 +172,7 @@ span.code_css {
     border-radius: 50%;
 }
 
-.biz-card.main::after {
+.main::after {
     content: '';
     position: absolute;
     left: 0;
@@ -162,25 +180,31 @@ span.code_css {
     bottom: 0;
     background-image: linear-gradient(90deg, red 0% 20%, orange 20% 40%, green 40% 60%, brown 60% 80%, yellow 80% 100%);
     height: 4%;
+    z-index: 2;
 }
 
-.biz-card.main > .child {
+.main > .child {
     z-index: 1;
     padding: 2rem;
 }
 
-.biz-card.main > .child.left {
+.main > .child.left {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
     padding-top: 4rem;
-    /* background-color: rgba(255, 255, 255, .2); */
 }
 
-.left .tech,
+.left .tech {
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: space-between;
+    align-items: center;
+}
+
 .left .social {
-    margin-top: .5rem;
     padding-top: 1rem;
     display: flex;
     justify-content: space-between;
@@ -188,7 +212,7 @@ span.code_css {
 }
 
 .left .tech:last-child {
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .left .social {
@@ -255,8 +279,7 @@ span.code_css {
     position: absolute;
     top: 1rem;
     left: 0;
-    right: 50%;
-    margin-left: 2rem;
+    right: 0;
     z-index: 2;
 }
 
@@ -272,30 +295,27 @@ span.code_css {
 }
 
 .main .nav .nav-items .nav-item a {
-    transition: color .2s ease-in;
-    font-size: 1.2rem;
+    transition: all .2s ease-in;
+    font-size: 1.4rem;
     font-weight: 500;
     letter-spacing: .1rem;
 }
 
 .main .nav .nav-items .nav-item a:hover {
     color: red;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 }
 
-.biz-card.main > .child.right {
+.main > .child.right {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     padding-left: 0;
 }
 
 .right .intro {
-    justify-self: center;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-self: end;
+    margin-top: 3%;
+    margin-right: 1%;
 }
 
 .intro p {
@@ -309,7 +329,6 @@ span.code_css {
 }
 
 .intro p.role {
-    align-self: flex-start;
     font-weight: 600;
     font-size: 1.5rem;
     letter-spacing: .3rem;
@@ -325,8 +344,8 @@ span.code_css {
     border-left: .2rem dotted #d8d8d8;
 }
 
-.buttons .btn {
-    margin: .5rem;
+.buttons {
+    margin-top: 2rem;
 }
 
 .btn {
@@ -336,17 +355,17 @@ span.code_css {
     border-radius: .4rem;
     color: white;
     font-size: 2rem;
+    text-align: center;
     border: .3rem solid var(--color-two);
     cursor: pointer;
+    margin-bottom: 2rem;
 }
 
 .btn.outline {
-    border: .15rem solid red;
     background: none;
 }
 
 .btn.outline:hover {
-    border: .15rem solid var(--color-two);
     background: red;
 }
 
@@ -354,9 +373,127 @@ span.code_css {
     background: none;
 }
 
-.biz-card.back {
-    transform: rotateY(180deg);
+@media only screen and (max-width: 600px){
+    .biz-child {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .main > .child.right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .right .intro {
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .btn {
+        border-width: .2rem;
+        font-size: 1rem;
+        margin: 0 .5rem;
+    }
+
+    .right .footer {
+        border-left: none;
+    }
+
+    .main > .child.left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 1rem;
+        overflow: scroll;
+    }
+
+    .left .tech {
+        padding-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
 }
+
+@media only screen and (min-width: 600px) and (max-width: 968px){
+    .main .nav .nav-items .nav-item a {
+        font-size: 1.2rem;
+    }
+
+    .main::before {
+        width: 60%;
+        height: 65%;
+    }
+
+    .main .nav {
+        top: .5rem;
+    }
+
+    body > .coffee i {
+        font-size: 3rem;
+    }
+    .main > .child {
+        padding: 1rem;
+    }
+
+    .main .right .intro {
+        margin-top: 2rem;
+    }
+    .intro p.name {
+        font-size: 2.3rem;
+    }
+
+    .intro p.role {
+        letter-spacing: .1rem;
+    }
+
+    .left .item .logo {
+        width: 3.5rem;
+    }
+
+    .left .item .name {
+        font-size: .88rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        letter-spacing: .1rem;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .btn {
+        /* font-size: 1.5rem; */
+    }
+    
+}
+
+@media only screen and (max-width: 1000px){
+    .btn {
+        font-size: 1.5rem;
+    }
+    
+}
+
+
 
 @keyframes anim_biz {
     0% {
