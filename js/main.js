@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    const main=$('.main');
+    const main=$('.about');
     main.toggleClass('back');
     const link=$('.link');
     link.on('click', function(){
@@ -7,8 +7,7 @@ $(document).ready(function(){
         
         $('.biz-card > .card').toggleClass('hidden', true);
 
-        // $(this).toggleClass('hidden', false);
-        $('.biz-card').toggleClass('back', true);
         $('.biz-card .'+target).toggleClass('hidden', false);
+        $('.biz-card').toggleClass('back', true);
     });
 });

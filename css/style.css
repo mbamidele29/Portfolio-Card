@@ -59,30 +59,28 @@ a {
     /* transition: all 3s ease-in; */
 }
 
-.biz-card.rotate  {
+/* .biz-card.rotate  {
     transform: rotateY(180deg);
-}
+} */
 
 .biz-child {
-    backface-visibility: hidden;
     background-color: rgba(0, 0, 0, .57);
     backdrop-filter: blur(.15rem);
     overflow: hidden;
     position: absolute;
     width: 100%;
     height: 100%;
-    background: none;
     display: grid;
     backface-visibility: hidden;
+}
+
+.biz-child.main {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
 .back {
     transform: rotateY(180deg);
-}
-
-.hidden {
-    display: none;
 }
 
 i {
@@ -96,6 +94,10 @@ body > .coffee {
 body > .coffee i {
     font-size: 4rem;
     animation: anim_coffee 3s linear infinite;
+}
+
+.biz-child.card.hidden {
+    display: none;
 }
 
 @keyframes anim_coffee {
@@ -196,7 +198,7 @@ span.code_css {
     padding-top: 4rem;
 }
 
-.left .tech {
+.main .left .tech {
     padding-top: 1rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -204,22 +206,22 @@ span.code_css {
     align-items: center;
 }
 
-.left .social {
+.main .left .social {
     padding-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.left .tech:last-child {
+.main .left .tech:last-child {
     justify-content: center;
 }
 
-.left .social {
+.main .left .social {
     justify-content: center;
 }
 
-.left .item {
+.main .left .item {
     width: 6.8rem;
     height: 6.8rem;
     display: flex;
@@ -233,22 +235,22 @@ span.code_css {
     transition: transform .3s ease-in-out;
 }
 
-.left .tech-stack .tech .item:hover {
+.main .left .tech-stack .tech .item:hover {
     background: red;
     transform: scale(1.2);
     box-shadow: 0 .1rem .5rem rgba(255, 255, 255, 1);
 }
 
-.left .tech-stack .tech .item:hover .logo,
-.left .tech-stack .tech .item:hover .name {
+.main .left .tech-stack .tech .item:hover .logo,
+.main .left .tech-stack .tech .item:hover .name {
     transform: scale(1.2);
 }
 
-.left .item .logo {
+.main .left .item .logo {
     width: 4rem;
 }
 
-.left .item .name {
+.main .left .item .name {
     font-size: 1.2rem;
     text-align: center;
     letter-spacing: .1rem;
@@ -373,6 +375,129 @@ span.code_css {
     background: none;
 }
 
+.biz-card .about {
+    position: relative;
+    color: white;
+
+}
+
+.biz-card .about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 55.7%;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.57);
+    background-image: repeating-linear-gradient(45deg , rgba(255, 0, 0, 0.57) 0% .2%, transparent .2% .4%),
+    repeating-linear-gradient(-45deg , rgba(255, 0, 0, 0.57) 0% .2%, transparent .2% .4%),
+    repeating-linear-gradient(0deg, rgba(255, 0, 0, 0.57) 0% .2%, transparent .2% .4%);
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+}
+
+.biz-card .about::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 55.5%;
+    z-index: -1;
+    background: rgb(245, 162, 30);
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.biz-card .about .intro {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 60%;
+    height: 20%;
+    background-color: rgb(190, 54, 54);
+    box-shadow: 2rem 1rem 3.1rem  rgb(190, 54, 54);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.biz-card .about .intro::before {
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: skewY(34deg);
+    transform-origin: left;
+    background-color: red;
+    z-index: -1;
+}
+
+.about .intro p.name {
+    text-align: center;
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+.about .intro p.role {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: .3rem;
+}
+
+.about .contact {
+    position: absolute;
+    top: 60%;
+    right: 0;
+    width: 50%;
+    padding: 2rem;
+    /* background-color: black; */
+}
+
+.about .contact p {
+    margin: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .1rem;
+}
+
+.about .summary {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    z-index: 1;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.about .contact p i {
+    margin-right: 2rem;
+}
+
+.prev {
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    font-size: 4rem;
+    background: red;
+    border-radius: 1rem;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 2rem black;
+    transition: all .3s;
+}
+
+.prev:hover {
+    transform: scale(1.1);
+}
+
 @media only screen and (max-width: 600px){
     .biz-child {
         display: flex;
@@ -418,7 +543,7 @@ span.code_css {
         overflow: scroll;
     }
 
-    .left .tech {
+    .main .left .tech {
         padding-top: 1rem;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -460,11 +585,11 @@ span.code_css {
         letter-spacing: .1rem;
     }
 
-    .left .item .logo {
+    .main .left .item .logo {
         width: 3.5rem;
     }
 
-    .left .item .name {
+    .main .left .item .name {
         font-size: .88rem;
     }
 
@@ -478,10 +603,6 @@ span.code_css {
         flex-direction: column;
         justify-content: center;
         align-content: center;
-    }
-
-    .btn {
-        /* font-size: 1.5rem; */
     }
     
 }
