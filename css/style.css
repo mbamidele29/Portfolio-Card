@@ -16,8 +16,9 @@ html {
 }
 
 body {
-    width: inherit;
-    height: inherit;
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
     position: relative;
     display: flex;
     overflow: hidden;
@@ -44,9 +45,12 @@ a {
 }
 
 .container {
-    width: 70%;
-    height: 80%;
+    width: 80%;
+    height: 90%;
+    border-radius: 2rem;
+    margin: 0 auto;
     perspective: 20rem;
+    position: relative;
 }
 
 .biz-card {
@@ -100,6 +104,269 @@ body > .coffee i {
     display: none;
 }
 
+@media screen and (max-width: 1045px) {
+    body .biz-card > .contact .shape {
+        top: calc(50% - 13rem);
+        width: 26rem;
+        height: 26rem;
+    }
+
+    body .biz-card > .contact::after {
+        right: -22%;
+    }
+}
+
+@media screen and (max-width: 881px) {
+    body .intro p.name {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 818px) {
+    body .btn {
+        font-size: 1.8rem;
+    }
+    body .main .left .tech {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    body .main > .child {
+        padding: 0rem;
+    }
+
+    body .social {
+        padding-top: .5rem;
+    }
+
+    body .right .intro {
+        margin-top: 15%;
+    }
+
+    body .biz-card .about .intro {
+        width: 55%;
+    }
+
+    body .about .contact {
+        top: 50%;
+        width: 55%;
+    }
+
+    body .about .contact p {
+        margin-bottom: 1rem;
+    }
+
+    body .about .contact p i {
+        margin-right: 1.2rem;
+    }
+
+    body .about .intro p.name {
+        font-size: 2.5rem;
+    }
+    
+    body .about .intro p.role {
+        font-size: 1.3rem;
+    }
+
+    body .biz-card > .contact::after {
+        right: -26%;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    body .main::before {
+        top: -60%;
+        right: -10%;
+        width: 120%;
+        height: 50rem;
+    }
+
+    body .main > .child.right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    body .right .intro {
+        justify-self: center;
+        margin: 0;
+    }
+
+    body .intro p {
+        text-align: center;
+    }
+
+    body .main .left .tech {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    body .right .footer {
+        border: none;
+    }
+    
+    body .biz-child.main {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    body .main > .child {
+        padding: 1rem;
+    }
+
+    body .container {
+        width: 90%;
+        height: 98%;
+        perspective: 20rem;
+        position: relative;
+    }
+
+    body .intro p.name {
+        font-size: 2.2rem;
+    }
+
+    body .intro p.role {
+        font-size: 1.2rem;
+        letter-spacing: .1rem;
+    }
+
+    body .btn {
+        font-size: 1.2rem;
+    }
+
+    body .about .contact p i {
+        display: block;
+    }
+
+    body .about .contact {
+        top: 45%;
+    }
+
+    body .about .intro p.name {
+        font-size: 2rem;
+    }
+    
+    body .about .intro p.role {
+        font-size: 1.2rem;
+    }
+
+    body .about .summary {
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 502px) {
+    body .biz-card .about .intro {
+        top: 5%;
+        right: 0;
+        width: 95%;
+        height: 10%;
+    }
+
+    body .biz-card .about::before {
+        height: 100%;
+        width: 100%;
+        clip-path: none;
+    }
+
+    body .biz-card .about::after {
+        top: 85%;
+        bottom: 10%;
+        height: 10%;
+        width: 100%;
+        clip-path: none;
+    }
+
+    body .biz-card .about .contact {
+        top: 85%;
+        height: 10%;
+        width: 100%;
+        padding: 0rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    body .about .contact p i {
+        display: inline;
+        margin-right: .2rem;
+    }
+
+    body .about .contact p {
+        margin: 0rem;
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+
+    body .about .summary {
+        position: relative;
+        top: 8rem;
+        width: 100%;
+        align-items: flex-start;
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    body .main .left .tech {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    body .biz-card .about .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    body .main .left .tech {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    body .about .contact p {
+        margin: 0rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    body .main .left .tech {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    body .socials{
+        display: none;
+    }
+
+    body .about .summary {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    body .title {
+        font-size: 1.4rem;
+    }
+    body .buttons {
+        display: flex;
+        margin-top: 1rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+    body .btn {
+        margin-bottom: 1rem;
+    }
+
+    body .about .intro p.name {
+        font-size: 1.5rem;
+    }
+    
+    body .about .intro p.role {
+        font-size: 1.1rem;
+    }
+}
+
 @keyframes anim_coffee {
     0%{
         transform: rotate(0deg);
@@ -116,7 +383,6 @@ body > span {
     position: absolute;
     color: rgb(255, 255, 255);
     font-size: 1.5rem;
-    /* background-color: blue; */
     opacity: 0;
 }
 
@@ -166,8 +432,8 @@ span.code_css {
 .main::before {
     content: '';
     position: absolute;
-    top: -30%;
-    right: -10%;
+    top: -35%;
+    right: -8%;
     background-color: rgb(228, 47, 56);
     width: 60%;
     height: 75%;
@@ -180,7 +446,7 @@ span.code_css {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient(90deg, red 0% 20%, orange 20% 40%, green 40% 60%, brown 60% 80%, yellow 80% 100%);
+    background: linear-gradient(90deg, red 0% 20%, orange 20% 40%, green 40% 60%, brown 60% 80%, yellow 80% 100%);
     height: 4%;
     z-index: 2;
 }
@@ -206,18 +472,22 @@ span.code_css {
     align-items: center;
 }
 
-.main .left .social {
+.social {
     padding-top: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.main .left .tech:last-child {
-    justify-content: center;
+.social .item {
+    transition: all .3s;
 }
 
-.main .left .social {
+.social .item:hover {
+    transform: scale(1.2);
+}
+
+.main .left .tech:last-child {
     justify-content: center;
 }
 
@@ -264,14 +534,20 @@ span.code_css {
     text-transform: uppercase;
     letter-spacing: .2rem;
     position: relative;
+    display: inline;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
 }
 
 .title::before {
     content: '';
     position: absolute;
     bottom: -.3rem;
-    left: 40%;
-    right: 40%;
+    left: 20%;
+    right: 20%;
     text-align: center;
     height: .2rem;
     background-color: red;
@@ -351,6 +627,7 @@ span.code_css {
 }
 
 .btn {
+    white-space: nowrap;
     padding: .8rem 2.2rem;
     background: var(--color-two);
     font-weight: 400;
@@ -361,6 +638,8 @@ span.code_css {
     border: .3rem solid var(--color-two);
     cursor: pointer;
     margin-bottom: 2rem;
+    transition: all .1s;
+    outline: none;
 }
 
 .btn.outline {
@@ -378,7 +657,6 @@ span.code_css {
 .biz-card .about {
     position: relative;
     color: white;
-
 }
 
 .biz-card .about::before {
@@ -389,7 +667,6 @@ span.code_css {
     height: 100%;
     width: 55.7%;
     z-index: -1;
-    background: rgba(0, 0, 0, 0.57);
     background-image: repeating-linear-gradient(45deg , rgba(255, 0, 0, 0.57) 0% .2%, transparent .2% .4%),
     repeating-linear-gradient(-45deg , rgba(255, 0, 0, 0.57) 0% .2%, transparent .2% .4%),
     repeating-linear-gradient(0deg, rgba(255, 0, 0, 0.57) 0% .2%, transparent .2% .4%);
@@ -453,7 +730,6 @@ span.code_css {
     right: 0;
     width: 50%;
     padding: 2rem;
-    /* background-color: black; */
 }
 
 .about .contact p {
@@ -491,127 +767,274 @@ span.code_css {
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 2rem black;
+    transform: scale(1.0);
+    transition: all .5s;
+}
+
+.biz-card .projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    z-index: 2;
+    background: rgb(245, 162, 30);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 40% 50%, 35% 100%, 0 100%);
+}
+
+.biz-card .projects::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    z-index: 2;
+    background: rgb(245, 162, 30);
+    clip-path: polygon(0 50%, 60% 50%, 65% 0%, 100% 0%, 100% 100%, 0 100%);
+}
+
+.biz-card .projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.biz-card .projects .card-title {
+    font-size: 4rem;
+    position: absolute;
+    top: 3%;
+    left: 0;
+    z-index: 3;
+    display: inline;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    padding: .5rem 1rem;
+}
+
+.biz-card .projects .projects-container {
+    width: 100%;
+    height: 100%;
+    padding: .5% .0;
+    display: block;
+    row-gap: .5rem;
+    column-gap: .5rem;
+    color: white;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.projects-container .project-row {
+    display: flex;
+    width: 100%;
+    height: 70%;
+    /* margin: .4rem; */
+    padding: .3rem;
+    margin-bottom: 1rem;
+}
+
+.projects-container .project-item {
+    border-radius: 1rem;
+    border: .1rem solid rgb(121, 118, 118);
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+    margin: 0 .5rem;
+    /* box-shadow: .2rem .3rem .3rem rgb(121, 118, 118); */
+    z-index: 1;
+    background-clip: padding-box;
+    transition: all .1s ease-in;
+}
+
+.projects-container .project-1,
+.projects-container .project-2 {
+    margin-top: 5.5%;
+    /* background-color: blue; */
+}
+
+.projects-container .project-3 {
+    margin-bottom: 5%;
+    /* background-color: blue; */
+}
+
+.projects-container .project-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: all 1s ease-in;
+    perspective: 80rem;
+}
+
+.projects-container .project-item:hover {
+    box-shadow: .2rem .3rem .3rem rgb(121, 118, 118), 
+                -.2rem -.3rem .3rem rgb(121, 118, 118);
+}
+
+.projects-container .project-item:hover img {
+    transform: scale(.2);
+    top: -40%;
+    left: -40%;
+    opacity: 0.5;
+    box-sizing: border-box;
+}
+
+.project-item .project-desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 1rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.project-item .project-desc h5 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: .05rem;
+    display: inline;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin-bottom: .4rem;
+}
+
+.project-item .project-desc p {
+    font-weight: 500;
+}
+
+.biz-card > .contact::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -20%;
+    height: 100%;
+    width: 100%;
+    color: white;
+    background: rgb(37, 37, 37);
+    clip-path: circle(50% at 50% 50%);
+    z-index: -1;
+}
+
+.biz-card > .contact {
+    background-color: rgb(255, 143, 10);
+}
+
+.biz-card > .contact .shape {
+    position: absolute;
+    left: 15%;
+    top: calc(50% - 15rem);
+    background-color: rgb(32, 32, 32);
+    z-index: 1;
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3rem .2rem 3rem black;
+}
+
+.biz-card > .contact .shape::before {
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+}
+
+.shape .item {
+    position: absolute;
+    margin: .5rem;
+}
+
+.shape .item.skype {
+    top: 0;
+    left: 0;
+}
+
+.shape .item.linkedin {
+    top: 0;
+    right: 0;
+}
+
+.shape .item.twitter {
+    bottom: 0;
+    left: 0;
+}
+
+.shape .item.github {
+    bottom: 0;
+    right: 0;
+}
+
+.shape .item img {
+    width: 6rem;
+    height: 6rem;
     transition: all .3s;
+}
+
+.shape .item img:hover {
+    transform: scale(1.1);
+    /* box-shadow: .5rem .5rem 2rem black; */
+}
+
+.biz-card > .contact .contact-form {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4rem;
+}
+
+.biz-card > .contact form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact form .form-control {
+    width: 100%;
+    padding: 1rem 2rem;
+    outline: none;
+    border: .1rem solid #222;
+    border-radius: .3rem;
+    margin: .3rem;
+    color: rgb(37, 36, 36);
+    font-size: 2rem;
+    /* font-weight: 600; */
+}
+
+textarea {
+    resize: none;
+}
+
+.contact form .form-control::placeholder {
+    color: rgb(37, 36, 36);
 }
 
 .prev:hover {
     transform: scale(1.1);
 }
 
-@media only screen and (max-width: 600px){
-    .biz-child {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .main > .child.right {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-top: 2rem;
-    }
-
-    .right .intro {
-        justify-self: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-content: center;
-    }
-
-    .btn {
-        border-width: .2rem;
-        font-size: 1rem;
-        margin: 0 .5rem;
-    }
-
-    .right .footer {
-        border-left: none;
-    }
-
-    .main > .child.left {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-top: 1rem;
-        overflow: scroll;
-    }
-
-    .main .left .tech {
-        padding-top: 1rem;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-}
-
-@media only screen and (min-width: 600px) and (max-width: 968px){
-    .main .nav .nav-items .nav-item a {
-        font-size: 1.2rem;
-    }
-
-    .main::before {
-        width: 60%;
-        height: 65%;
-    }
-
-    .main .nav {
-        top: .5rem;
-    }
-
-    body > .coffee i {
-        font-size: 3rem;
-    }
-    .main > .child {
-        padding: 1rem;
-    }
-
-    .main .right .intro {
-        margin-top: 2rem;
-    }
-    .intro p.name {
-        font-size: 2.3rem;
-    }
-
-    .intro p.role {
-        letter-spacing: .1rem;
-    }
-
-    .main .left .item .logo {
-        width: 3.5rem;
-    }
-
-    .main .left .item .name {
-        font-size: .88rem;
-    }
-
-    .title {
-        font-size: 1.8rem;
-        letter-spacing: .1rem;
-    }
-
-    .buttons {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-    }
-    
-}
-
-@media only screen and (max-width: 1000px){
-    .btn {
-        font-size: 1.5rem;
-    }
-    
+.prev.hidden {
+    transform: scale(0);
 }
 
 
