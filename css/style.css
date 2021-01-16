@@ -950,15 +950,16 @@ span.code_css {
 }
 
 .projects-container .project-item:hover {
-    box-shadow: .2rem .3rem .3rem rgb(121, 118, 118), 
-                -.2rem -.3rem .3rem rgb(121, 118, 118);
+    transform: scale(1.02);
+    box-shadow: .3rem .3rem .3rem rgb(121, 118, 118), 
+                -.3rem -.3rem .3rem rgb(121, 118, 118);
 }
 
 .projects-container .project-item:hover img {
-    transform: scale(.4);
-    top: -40%;
+    /* transform: scale(1.2); */
+    /* top: -40%;
     left: -40%;
-    box-sizing: border-box;
+    box-sizing: border-box; */
 }
 
 .project-item .project-desc {
